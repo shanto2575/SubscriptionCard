@@ -12,7 +12,7 @@ const ProductSection = ({ productPromise }) => {
     const [selectCard, setselectCard] = useState([])
 
     return (
-        <div className='container mx-auto space-y-4 my-20'>
+        <div className='container mx-auto space-y-4 my-10 lg:my-20'>
             <h2 className='text-5xl font-bold text-center'>Premium Digital Tools</h2>
             <p className='text-xl text-gray-400 text-center'>Choose from our curated collection of premium digital products designed <br></br> to boost your productivity and creativity.</p>
 

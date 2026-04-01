@@ -5,11 +5,19 @@ const CartSection = ({ selectCard, setselectCard }) => {
 
     const handlerDeleteBtn = (card) => {
         const filterCard = selectCard.filter((cards) => cards.name != card.name)
+        toast.warn(`${card.name} is Remove!`,{
+            position:'top-right',
+            theme:'light'
+        })
         setselectCard(filterCard)
     };
-    const handlerCheckOut=()=>{
+    const handlerCheckOut = () => {
         setselectCard([])
-        toast.success('CheckOut Compated!')
+        // toast.success('')
+        toast.success('CheckOut Compated!!', {
+            position: "top-right",
+            theme: 'colored',
+        });
     }
 
     const total = selectCard.reduce((sum, item) => sum + item.price, 0)
@@ -46,9 +54,9 @@ const CartSection = ({ selectCard, setselectCard }) => {
                 <p className='text-xl font-bold'>Total:</p>
                 <p className='mr-10 text-2xl font-bold'>${total}</p>
             </div>
-            <button 
-            onClick={handlerCheckOut}
-            className='btn bg-linear-to-r from-indigo-600 to-purple-600 text-white text-xl rounded-full w-full'>Proceed to Checkout</button>
+            <button
+                onClick={handlerCheckOut}
+                className='btn bg-linear-to-r from-indigo-600 to-purple-600 text-white text-xl rounded-full w-full'>Proceed to Checkout</button>
         </div>
     )
 }

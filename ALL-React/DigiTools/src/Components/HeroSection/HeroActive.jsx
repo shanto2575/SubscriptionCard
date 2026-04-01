@@ -1,10 +1,9 @@
 import React from 'react'
 
-
 const HeroActive = () => {
     return (
         <div>
-            <div className='h-50 bg-linear-to-r from-indigo-600 to-purple-600 my-20 text-center text-white flex items-center justify-center gap-64'>
+            <div className='h-50 bg-linear-to-r from-indigo-600 to-purple-600 my-10 lg:my-20 text-center text-white flex items-center justify-center gap-20 lg:gap-64'>
                 
                     <div className='space-y-3 '>
                         <h3 className='font-bold text-5xl'>50K+</h3>

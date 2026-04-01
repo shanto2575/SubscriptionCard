@@ -9,10 +9,16 @@ const ProductCard = ({ product,selectCard,setselectCard }) => {
         const isExist=selectCard.find(items=>items.id===product.id)
 
         if(isExist){
-            toast.error(`${product.name} is already added!` )
+            toast.error(`${product.name} is already added!`,{
+                position:'top-right',
+                theme:'dark'
+            } )
             return;
         }
-        toast.success(`${product.name} is selected`);
+        toast.success(`${product.name} is selected`,{
+            position:'top-right',
+            theme:'dark'
+        });
         setisSelected(true)
         setselectCard([...selectCard,product])
     }
@@ -28,8 +34,8 @@ const ProductCard = ({ product,selectCard,setselectCard }) => {
 
     return (
         <div className="">
-            <div className="card relative bg-base-100 shadow-[0_0_25px_rgba(0,0,0,0.15)]">
-                <span className={`badge ${tagColor[tagType]} absolute top-3 right-4`}>
+            <div className="card relative bg-base-100 shadow-[0_0_25px_rgba(0,0,0,0.15)] ">
+                <span className={`badge ${tagColor[tagType]} absolute top-3 right-4 `} >
                     {tag}
                 </span>
                 <div className="card-body">
