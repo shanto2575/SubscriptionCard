@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation'
 import React from 'react'
 
 const AddHeritageSite = () => {
-
     const route=useRouter()
     const onSubmit = async (e) => {
         e.preventDefault()
