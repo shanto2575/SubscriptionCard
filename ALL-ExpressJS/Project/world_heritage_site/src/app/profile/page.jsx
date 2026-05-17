@@ -10,7 +10,7 @@ const ProfilePage = async () => {
     // console.log(session)
     const user = session?.user;
     return (
-        <div className='mt-12'>
+        <div className='my-6 lg:mt-12'>
             <div className='w-96 mx-auto'>
                 <div className=' border rounded-2xl p-5'>
 

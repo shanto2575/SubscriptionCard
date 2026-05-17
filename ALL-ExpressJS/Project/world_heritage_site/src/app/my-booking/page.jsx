@@ -21,19 +21,22 @@ const MyBookingPage = async () => {
 
     return (
         <div className='max-w-7xl mx-auto mt-6'>
-            <h1 className='text-3xl font-bold'>My Booking</h1>
-            <p className='text-gray-400'>Manage and view your upcoming travel plans</p>
-            <div className='space-y-5'>
+            <div className='text-center lg:text-start lg:p-3'>
+                <h1 className='text-3xl font-bold'>My Booking</h1>
+                <p className='text-gray-400'>Manage and view your upcoming travel plans</p>
+            </div>
+            <div className='space-y-5 px-3'>
                 {booking.length === 0 ? <div className='border rounded-2xl bg-cyan-50'>
                     <h1 className='flex items-center justify-center font-bold text-4xl h-[500px]'>No Booking </h1>
                 </div> :
-                    booking.map(booking => <div key={booking._id} className='border rounded-2xl p-5 my-5'>
-                        <div className='flex gap-10 '>
+                    booking.map(booking => <div key={booking._id} className='border rounded-2xl p-3 my-5'>
+                        <div className='flex flex-col lg:flex-row gap-3 lg:gap-10 '>
                             <Image
                                 src={booking?.imageUrl}
                                 alt={booking.siteName}
                                 width={300}
                                 height={300}
+                                className='w-full lg:w-48'
                             />
                             <div className='flex flex-1 flex-col justify-between'>
                                 <h1 className='text-2xl font-bold'>Country: <span className='text-orange-500 font-bold'>{booking.country}</span></h1>
@@ -46,7 +49,7 @@ const MyBookingPage = async () => {
                                         year: "numeric",
                                     })}
                                 </p>
-                                <div className='flex justify-between items-center'>
+                                <div className='flex flex-col lg:flex-row space-y-3  justify-between lg:items-center'>
                                     <p className='text-2xl font-bold text-cyan-500'>unescoYear: {booking.unescoYear}</p>
                                     <div className='flex items-center justify-between gap-5'>
                                         <BookingCancel booking={booking} />

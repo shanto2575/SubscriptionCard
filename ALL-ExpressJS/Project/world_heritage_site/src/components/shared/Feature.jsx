@@ -12,17 +12,17 @@ const FeaturedPage = async () => {
     const destination = await res.json()
     // console.log(destination)
     return (
-        <div className='w-10/12 mx-auto'>
+        <div className='p-3 lg:w-10/12 mx-auto'>
             <div className='text-center mt-12'>
                 <h1 className='text-3xl font-bold'>Featured Heritages</h1>
                 <p>Handpicked travel experiences for the adventure seekers</p>
             </div>
-            <div className='text-end'>
+            <div className='text-center lg:text-end my-2'>
                 <Link href={'/heritages'}><Button variant='secondary' className={'rounded'}>All Heritages <FaArrowCircleRight /></Button></Link>
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-10'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 lg:gap-10'>
                 {
-                    destination.map(destination => <div key={destination._id} className='my-5'>
+                    destination.map(destination => <div key={destination._id} className='my-2'>
                         <div className="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
 
                             {/* Image */}
